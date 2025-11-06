@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: "Roboto", sans-serif;
+}
+
+header{
+    padding: 10px 30px;
+    background-color: rgb(227, 197, 255);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .hamburguesa{
+    font-size: 30px;
+    display: none;
+}
+
+header nav{
+    display: flex;
+    align-items: center;
+}
+
+header nav ul{
+    display: flex;
+    gap: 10px;
+    list-style: none;
+}
+header nav ul li.submenu{
+    position: relative;
+    color: rgb(32, 32, 32);;
+}
+
+header nav ul li.submenu  > ul {
+    display: none;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 140px;
+    background: rgb(227, 197, 255);
+    padding: 10px;
+}
+
+header nav ul li.submenu  > ul li{
+    padding: 10px 0;
+}
+
+header nav ul li.submenu:hover > ul{
+    display: block;
+}
+
+header nav ul li a{
+    text-decoration: none;
+    color: rgb(32, 32, 32);
+}
+
+
+/*main*/
+.grilla{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+    "portafolio6 portafolio6 portafolio4"
+    "portafolio6 portafolio6 portafolio2"
+    "portafolio3 portafolio5 portafolio1"
+    ;
+    width: 100%;
+    max-width: 800px;
+    justify-content: center;
+}
+
+.caja1{
+    grid-area: portafolio1;
+}
+.caja2{
+    grid-area: portafolio2;
+}
+.caja3{
+    grid-area: portafolio3;
+}
+.caja4{
+    grid-area: portafolio4;
+}
+.caja5{
+    grid-area: portafolio5;
+}
+.caja6{
+    grid-area: portafolio6;
+}
+
+.grilla div img{
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+
+@media (max-width: 576px){
+    header .hamburguesa{
+        display: block;
+    }
+
+    header nav{
+        display: none;
+    }
+}

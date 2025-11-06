@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: "Roboto", sans-serif;
+}
+
+header{
+    padding: 10px 30px;
+    background-color: rgb(227, 197, 255);
+/*     display: flex;
+    align-items: center;
+    justify-content: space-between; */
+}
+
+header .hamburguesa{
+    font-size: 30px;
+    display: none;
+}
+
+header nav{
+    display: flex;
+    align-items: center;
+}
+
+header nav ul{
+    display: flex;
+    gap: 10px;
+    list-style: none;
+}
+header nav ul li.submenu{
+    position: relative;
+    color: rgb(32, 32, 32);;
+}
+
+header nav ul li.submenu  > ul {
+    display: none;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 140px;
+    background: rgb(227, 197, 255);
+    padding: 10px;
+}
+
+header nav ul li.submenu  > ul li{
+    padding: 10px 0;
+}
+
+header nav ul li.submenu:hover > ul{
+    display: block;
+}
+
+header nav ul li a.nav-link{
+    text-decoration: none;
+    font-weight: 600;
+}
+
+header nav ul li a:link{
+    color: rgb(32, 32, 32);
+}
+
+header nav ul li a.nav-link:hover{
+    color: #56147B;
+}
+
+/* header nav ul li a:visited{
+    color: brown;
+}
+
+header nav ul li a:hover{
+    color: blue;
+}
+
+header nav ul li a:active{
+    background-color: rgb(193, 184, 29);
+}
+
+.form input:focus{
+    background-color: aquamarine;
+}
+ */
+/*main*/
+main{
+    padding: 75px 0 150px;
+}
+
+.grilla{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+    "portafolio6 portafolio5 portafolio4"
+    "portafolio3 portafolio3 portafolio2"
+    "portafolio3 portafolio3 portafolio1"
+    ;
+    width: 100%;
+    margin-top: 30px;
+    justify-content: center;
+    gap: 20px;
+}
+
+.grilla div{
+    position: relative;
+}
+
+.grilla div::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.662);
+    opacity: 0;
+    z-index: 1;
+}
+
+.grilla > div:hover{
+    cursor: pointer;
+}
+
+.grilla > div:hover::after {
+    opacity: 1;
+}
+
+.grilla div:first-child{
+    grid-area: portafolio1;
+}
+.grilla div:nth-child(2){
+    grid-area: portafolio2;
+}
+.grilla div:nth-child(3){
+    grid-area: portafolio3;
+    position: relative;
+}
+
+.grilla div p{
+    position: absolute;
+    width: 300px;
+    top: calc(50% - 70px);
+    left: calc(50% - 140px);
+    z-index: 2;
+    color: white;
+    opacity: 0;
+}
+
+.grilla div:hover p{
+    opacity: 1;
+}
+
+.grilla div:nth-child(4){
+    grid-area: portafolio4;
+}
+.grilla div:nth-child(5){
+    grid-area: portafolio5;
+}
+.grilla div:last-child{
+    grid-area: portafolio6;
+}
+
+.grilla div img{
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+
+
+.seccion > div{
+    background-color: blanchedalmond;
+}
+
+/*tablet
+@media (min-width: 576px){
+
+}
+*/
+/*Escritorio
+@media (min-width: 1180px){
+
+}*/
+
+/*escritorio desde 1180px*/
+
+/*tablet 768px a 991px
+@media (max-width: 991px){
+
+}*/
+
+/*movil 360px a 480px*/
+
+@media (max-width: 991px){
+    header .hamburguesa{
+        display: block;
+    }
+
+    header nav{
+        display: none;
+    }
+    .grilla{
+        grid-template-columns: repeat(2, 300px);
+        grid-template-areas: 
+        "portafolio1 portafolio2"
+        "portafolio3 portafolio4"
+        "portafolio5 portafolio6"
+        ;
+    }
+}
+
+@media (max-width: 576px){
+    .grilla{
+        grid-template-columns: repeat(1, 300px);
+        grid-template-areas: 
+        "portafolio1"
+        "portafolio2"
+        "portafolio3"
+        "portafolio4"
+        "portafolio5"
+        "portafolio6"
+        ;
+    }
+}
